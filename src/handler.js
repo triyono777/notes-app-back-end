@@ -33,4 +33,11 @@ const addNoteHandler = (request, h) => {
   return response;
 };
 
-module.exports = {addNoteHandler};
+const getAllNoteHandler = ()=>({
+  status: 'succes',
+  data: {
+    notes,
+  },
+});
+
+module.exports = {addNoteHandler, getAllNoteHandler};

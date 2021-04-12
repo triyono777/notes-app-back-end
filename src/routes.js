@@ -1,4 +1,5 @@
-const {addNoteHandler, getAllNoteHandler} = require('./handler');
+// eslint-disable-next-line max-len
+const {addNoteHandler, getAllNoteHandler, getNoteByIdHandler} = require('./handler');
 
 const routes = [
   {
@@ -10,7 +11,9 @@ const routes = [
         origin: ['*'],
       },
     },
-  }, {
+  },
+
+  {
     method: 'GET',
     path: '/notes',
     handler: getAllNoteHandler,
@@ -19,6 +22,16 @@ const routes = [
         origin: ['*'],
       },
     },
+  }, {
+    method: 'GET',
+    path: '/notes/{id}',
+    handler: getNoteByIdHandler,
+    options: {
+      cors: {
+        origin: ['*'],
+      },
+    },
+
   },
 ];
 

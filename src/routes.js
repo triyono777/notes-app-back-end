@@ -1,7 +1,8 @@
 const {addNoteHandler,
   getAllNoteHandler,
   getNoteByIdHandler,
-  editNoteByIdHandler} = require('./handler');
+  editNoteByIdHandler,
+  deleteNoteByIdHandler} = require('./handler');
 
 const routes = [
   {
@@ -40,6 +41,17 @@ const routes = [
     method: 'PUT',
     path: '/notes/{id}',
     handler: editNoteByIdHandler,
+    options: {
+      cors: {
+        origin: ['*'],
+      },
+    },
+
+  },
+  {
+    method: 'DELETE',
+    path: '/notes/{id}',
+    handler: deleteNoteByIdHandler,
     options: {
       cors: {
         origin: ['*'],
